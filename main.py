@@ -1,0 +1,17 @@
+import uvicorn
+from alembic import command
+from alembic.config import Config
+
+from src import app
+from src.core.config import settings
+
+
+if __name__ == "__main__":
+    alembic_config = Config("alembic.ini")
+    command.upgrade(alembic_config, "head")
+    uvicorn.run(
+        "src:app",
+        host="0.0.0.0",
+        port=8080,
+        reload=settings.RELOAD,
+    )

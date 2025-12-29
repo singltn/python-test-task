@@ -1,0 +1,6 @@
+/.venv/
+/.env
+__pycache__/
+.idea/
+src/__pycache__/
+src/schemas/__pycache__/
